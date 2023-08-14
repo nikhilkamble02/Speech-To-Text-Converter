@@ -2,6 +2,22 @@ let start_btn = document.getElementById('start-btn')
 let speech_to_text = document.getElementsByClassName('speech-to-text')[0]
 let btn_clicked = false;
 
+let copy_btn = document.getElementById('copy-btn');
+copy_btn.addEventListener('click', () => {
+
+    // Get the text field
+    let copyText = document.getElementById("input");
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
+    // Alert the copied text
+    alert("Copied the text: " + copyText.value);
+})
 // let content = '';
 
 
